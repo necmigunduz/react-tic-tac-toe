@@ -4,3 +4,23 @@
   background-color: rgb(255, 255, 255);
   justify-content: center;
 }
+
+/* Animation */
+@keyframes symbol-appear {
+  from {
+    transform: scale(0.01);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+svg {
+  animation-name: symbol-appear;
+  animation-duration: 0.15s;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 20%;
+  background-color: rgb(226, 40, 40);
+  padding: 10px;
+  margin: 2px;
+}
