@@ -52,7 +52,7 @@ class Result extends Component {
     }
     return (
       // Return result and winning line 
-      <div>
+      <div className="result">
         <h3>{result}</h3>
         <p>{winL}</p>
       </div>
