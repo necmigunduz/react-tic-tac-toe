@@ -36,6 +36,24 @@ class Board extends Component {
   }
 
   render() {
-    return <div>board</div>;
-  }
-}
+    return (
+      <div>
+        {Object.keys(this.props.board).map((horizontal) => {
+          return (
+            <div
+              key={horizontal}
+            >
+              {this.props.board[horizontal].map((symbol, vertical) => {
+                return this.getSymbol(horizontal, vertical, symbol);
+              })}
+            </div>
+          );
+        })}
+        <Result winningLine={this.props.winningLine} />
+        <button onClick={this.props.resetGame}>
+          Restart the game!
+        </button>
+      </div>
+    );
+  };
+};
