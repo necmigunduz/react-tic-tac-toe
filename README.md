@@ -2,7 +2,7 @@
 
 This is a game app. Tic-Tac-Toe is an old game. Two players plae X and O symbols on a board and a player needs to be able to cover a whole row or a whole column or cells cross from left to right or right to left with his or her symbol.
 
-![screenshot]()
+![screenshot](https://github.com/necmigunduz/react-tic-tac-toe/blob/master/assets/screenshot.png)
 
 ## Built With
 
