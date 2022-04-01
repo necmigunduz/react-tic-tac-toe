@@ -55,6 +55,25 @@ svg {
 }
 
 /* Center header of the game */
+h1 {
+  text-align: center;
+  margin: 25px auto;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  width: 55%;
+}
+
 h2 {
   text-align: center;
+}
+
+/* Center everything inside the board */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
