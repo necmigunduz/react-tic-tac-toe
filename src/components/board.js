@@ -40,9 +40,7 @@ class Board extends Component {
       <div>
         {Object.keys(this.props.board).map((horizontal) => {
           return (
-            <div
-              key={horizontal}
-            >
+            <div key={horizontal}>
               {this.props.board[horizontal].map((symbol, vertical) => {
                 return this.getSymbol(horizontal, vertical, symbol);
               })}
@@ -50,10 +48,19 @@ class Board extends Component {
           );
         })}
         <Result winningLine={this.props.winningLine} />
-        <button onClick={this.props.resetGame}>
-          Restart the game!
-        </button>
+        <button onClick={this.props.resetGame}>Restart the game!</button>
       </div>
     );
-  };
+  }
+}
+
+// Define types
+Board.propTypes = {
+  board: PropTypes.object.isRequired,
+  winning: PropTypes.string,
+  turn: PropTypes.string.isRequired,
+  winningLine: PropTypes.string,
+  draw: PropTypes.bool.isRequired,
+  placeSymbol: PropTypes.func.isRequired,
+  resetGame: PropTypes.func.isRequired,
 };
