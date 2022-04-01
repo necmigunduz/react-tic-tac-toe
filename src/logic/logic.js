@@ -42,14 +42,14 @@ const threatCrossRight = (symbol, ...horizontals) =>
 const result = (symbol, board) => {
   const horizontals = Object.keys(board).map((horizontal) => board[horizontal]);
   return [
-    { line: "horizontal0", winnin: wonRow(symbol, board[0]) },
-    { line: "horizontal1", winning: wonRow(symbol, board[1]) },
-    { line: "horizontal2", winning: wonRow(symbol, board[2]) },
-    { line: "vertical0", winning: wonCol(symbol, 0, ...horizontals) },
-    { line: "vertical1", winning: wonCol(symbol, 1, ...horizontals) },
-    { line: "vertical2", winning: wonCol(symbol, 2, ...horizontals) },
-    { line: "crossLeft", winning: wonCrossLeft(symbol, ...horizontals) },
-    { line: "crossRight", winning: wonCrossRight(symbol, ...horizontals) },
+    { line: 'horizontal0', winnin: wonRow(symbol, board[0]) },
+    { line: 'horizontal1', winning: wonRow(symbol, board[1]) },
+    { line: 'horizontal2', winning: wonRow(symbol, board[2]) },
+    { line: 'vertical0', winning: wonCol(symbol, 0, ...horizontals) },
+    { line: 'vertical1', winning: wonCol(symbol, 1, ...horizontals) },
+    { line: 'vertical2', winning: wonCol(symbol, 2, ...horizontals) },
+    { line: 'crossLeft', winning: wonCrossLeft(symbol, ...horizontals) },
+    { line: 'crossRight', winning: wonCrossRight(symbol, ...horizontals) },
   ].reduce(
     (answer, nextCheck) => {
       return nextCheck.won ? nextCheck : answer;
