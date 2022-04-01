@@ -17,6 +17,9 @@ This is a game app. Tic-Tac-Toe is an old game. Two players plae X and O symbols
 - `npm install`
 - `npm start`
 
+## Deployed Version of App on Netlify
+- Netlify link: [Netlify](https://tic-tac-toe-react-necm.netlify.app/)
+
 ## Author
 
 👤 **Necmi Gunduz**
