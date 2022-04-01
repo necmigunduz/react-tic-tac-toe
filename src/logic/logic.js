@@ -6,9 +6,7 @@ const threatRow = (symbol, horizontal) => countRow(symbol, horizontal) === 2;
 
 // Counting a symbol in a column and deciding whether game is won or there exists a threat
 const countCol = (symbol, vertical, ...horizontals) =>
-  horizontals
-    .map((horizontal) => horizontal[vertical])
-    .filter((e) => e === symbol).length;
+  horizontals.map((horizontal) => horizontal[vertical]).filter((e) => e === symbol).length;
 const wonCol = (symbol, vertical, ...horizontals) =>
   countCol(symbol, vertical, ...horizontals) === 3;
 const threatCol = (symbol, vertical, ...horizontals) =>
@@ -17,21 +15,16 @@ const threatCol = (symbol, vertical, ...horizontals) =>
 // Counting a symbol from left to right cross and deciding whether game is won or there exists a threat
 const countCrossLeft = (symbol, ...horizontals) => {
   const [horizontal0, horizontal1, horizontal2] = horizontals;
-  return [horizontal0[0], horizontal1[1], horizontal2[2]].filter(
-    (e) => e === symbol
-  ).length;
+  return [horizontal0[0], horizontal1[1], horizontal2[2]].filter((e) => e === symbol).length;
 };
-const wonCrossLeft = (symbol, ...horizontals) =>
-  countCrossLeft(symbol, ...horizontals) === 3;
+const wonCrossLeft = (symbol, ...horizontals) => countCrossLeft(symbol, ...horizontals) === 3;
 const threatCrossLeft = (symbol, ...horizontals) =>
   countCrossLeft(symbol, ...horizontals) === 2;
 
 // Counting a symbol from right to left cross and deciding whether game is won or there exists a threat
 const countCrossRight = (symbol, ...horizontals) => {
   const [horizontal0, horizontal1, horizontal2] = horizontals;
-  return [horizontal0[2], horizontal1[1], horizontal2[0]].filter(
-    (e) => e === symbol
-  ).length;
+  return [horizontal0[2], horizontal1[1], horizontal2[0]].filter((e) => e === symbol).length;
 };
 const wonCrossRight = (symbol, ...horizontals) =>
   countCrossRight(symbol, ...horizontals) === 3;
@@ -52,7 +45,7 @@ const result = (symbol, board) => {
     { line: 'crossRight', winning: wonCrossRight(symbol, ...horizontals) },
   ].reduce(
     (answer, nextCheck) => {
-      return nextCheck.won ? nextCheck : answer;
+      return nextCheck.winning ? nextCheck : answer;
     },
     { winning: false }
   );
