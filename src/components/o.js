@@ -3,8 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Symbol } from './symbol';
 
-// Create symbol O 
-// Symbol O Component
+// Create symbol O (Symbol O Component)
 const SymbolO = () => {
     return(
         <Symbol>
