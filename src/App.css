@@ -24,3 +24,27 @@ svg {
   padding: 10px;
   margin: 2px;
 }
+
+/* Restart the game button */
+.reset-game {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 10px 80px;
+  border: 3px solid rgb(51, 2, 2);
+  border-radius: 50px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  transition: all 0.5s;
+  background-color: rgb(255, 255, 255);
+}
+
+.reset-game:hover {
+  padding: 12px 83px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
