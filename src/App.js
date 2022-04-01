@@ -12,5 +12,10 @@ const App = () => {
     </div>
   );
 }
-
-export default App;
+// Style App
+export default styled(App)`
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+`;
