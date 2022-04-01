@@ -13,3 +13,10 @@ export const Symbol = styledComponent.div`
     transition: background-color .6s ease;
 `;
 
+// Creating cells on the game board
+const PrototypeSymbol = (props) => {
+    return <Symbol></Symbol>
+};
+
+// Export PrototypeSymbol (reusable component)
+export default PrototypeSymbol;
