@@ -64,3 +64,25 @@ Board.propTypes = {
   placeSymbol: PropTypes.func.isRequired,
   resetGame: PropTypes.func.isRequired,
 };
+// Connect and export board
+export default connect(
+  ({ board, turn, winning, draw, winningLine }) => ({
+    board,
+    turn,
+    winning,
+    draw,
+    winningLine,
+  }),
+  (dispatch) => {
+    return {
+      placeSymbol(horizontal, vertical, symbol) {
+        dispatch(placeSymbol(horizontal, vertical, symbol));
+      },
+      resetGame() {
+        dispatch(resetGame());
+      },
+    };
+  }
+)(Board);
+
+export { Board };
