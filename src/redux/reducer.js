@@ -44,17 +44,23 @@ const reducer = (state, action) => {
       if (!newState.winning) {
         newState.turn = newState.turn === O ? X : O;
       }
-    // Copy the mutated state of the newState 
-    // and check whether the number of the filled cells equals to nine
-    // (Checking if all the moves are completed by two players)
+      // Copy the mutated state of the newState
+      // and check whether the number of the filled cells equals to nine
+      // (Checking if all the moves are completed by two players)
       const boardFilled =
         [
           ...newState.board[0],
           ...newState.board[1],
           ...newState.board[2],
         ].filter((cell) => cell !== "").length === 9;
+      // Check if there is a draw if all the cells are filled and no winners
+      if (boardFilled && !newState.won) {
+        newState.draw = true;
+      }
 
+      //Return the mutated newState - The original state is not mutated.
       return newState;
+    // RESET_GAME means returning to the initial state values given on the top of the reducer
     case "RESET_GAME":
       return initialState;
     default:
