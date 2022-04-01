@@ -15,8 +15,11 @@ export const Symbol = styledComponent.div`
 
 // Creating cells on the game board
 const PrototypeSymbol = (props) => {
-    return <Symbol></Symbol>
+    return <Symbol onClick={() => props.placeSymbol(props.turn)}></Symbol>
 };
-
+// Define type of placeSymbol method
+PrototypeSymbol.propTypes = {
+    placeSymbol: PropTypes.func.isRequired
+};
 // Export PrototypeSymbol (reusable component)
 export default PrototypeSymbol;
