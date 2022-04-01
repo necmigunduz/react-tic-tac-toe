@@ -1,3 +1,4 @@
+// Import lodash and the result method from logic file
 import * as _ from "lodash";
 import { result } from "../logic/logic";
 
@@ -67,3 +68,5 @@ const reducer = (state, action) => {
       return state;
   }
 };
+// Export the initial state, the symbols of X and O, and the reducer
+export { initialState, reducer, X, O };
