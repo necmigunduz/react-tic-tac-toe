@@ -44,6 +44,15 @@ const reducer = (state, action) => {
       if (!newState.winning) {
         newState.turn = newState.turn === O ? X : O;
       }
+    // Copy the mutated state of the newState 
+    // and check whether the number of the filled cells equals to nine
+    // (Checking if all the moves are completed by two players)
+      const boardFilled =
+        [
+          ...newState.board[0],
+          ...newState.board[1],
+          ...newState.board[2],
+        ].filter((cell) => cell !== "").length === 9;
 
       return newState;
     case "RESET_GAME":
