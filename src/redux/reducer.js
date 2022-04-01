@@ -18,3 +18,13 @@ const initialState = {
   turn: O
 };
 
+const reducer = (state, action) => {
+    switch(action.type) {
+        case 'PLACE_SYMBOL':
+            return newState;
+        case 'RESET_GAME':
+            return initialState;
+        default:
+            return state;        
+    };
+};
