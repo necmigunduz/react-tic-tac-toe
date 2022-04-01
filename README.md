@@ -32,6 +32,6 @@ Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a ⭐️ if you like this project!!
 
 ## 📝 [License](https://creativecommons.org/licenses/by-nc-nd/4.0/)
