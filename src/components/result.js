@@ -57,5 +57,22 @@ class Result extends Component {
         <p>{winL}</p>
       </div>
     );
-  }
-}
+  };
+};
+
+// Define types
+Result.propTypes = {
+  winning: PropTypes.string,
+  turn: PropTypes.string.isRequired,
+  draw: PropTypes.bool.isRequired,
+};
+
+// Connect
+export default connect(({ winning, turn, draw }) => ({
+  winning,
+  turn,
+  draw
+}))(Result);
+
+// Export
+export { Result };
