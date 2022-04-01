@@ -25,3 +25,16 @@ const wonCrossLeft = (symbol, ...horizontals) =>
   countCrossLeft(symbol, ...horizontals) === 3;
 const threatCrossLeft = (symbol, ...horizontals) =>
   countCrossLeft(symbol, ...horizontals) === 2;
+
+// Counting a symbol from right to left cross and deciding whether game is won or there exists a threat
+const countCrossRight = (symbol, ...horizontals) => {
+  const [horizontal0, horizontal1, horizontal2] = horizontals;
+  return [horizontal0[2], horizontal1[1], horizontal2[0]].filter(
+    (e) => e === symbol
+  ).length;
+};
+const wonCrossRight = (symbol, ...horizontals) =>
+  countCrossRight(symbol, ...horizontals) === 3;
+const threatCrossRight = (symbol, ...horizontals) =>
+  countCrossRight(symbol, ...horizontals) === 2;
+
