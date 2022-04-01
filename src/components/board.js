@@ -14,8 +14,27 @@ class Board extends Component {
   // If there is no winner, place a symbol on the board
   placeSymbol(horizontal, vertical, symbol) {
     !this.props.winning && this.props.placeSymbol(horizontal, vertical, symbol);
-  };
-  
+  }
+  // Decide which componet (X or O) to use depending on the turn
+  getSymbol(horizontal, vertical, symbol) {
+    // If turn belongs to symbol X
+    if (symbol === X) {
+      return <SymbolX key={vertical} vertical={vertical} />;
+    }
+    // If turn belongs to symbol Y
+    if (symbol === O) {
+      return <SymbolO key={vertical} vertical={vertical} />;
+    }
+    //  If no symbol is placed yet, show the empty board
+    return (
+      <PrototypeSymbol
+        key={vertical}
+        placeSymbol={this.placeSymbol.bind(this, horizontal, vertical)}
+        turn={this.props.turn}
+      />
+    );
+  }
+
   render() {
     return <div>board</div>;
   }
