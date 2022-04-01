@@ -53,3 +53,8 @@ svg {
 .result {
   margin-top: 25px;
 }
+
+/* Center header of the game */
+h2 {
+  text-align: center;
+}
