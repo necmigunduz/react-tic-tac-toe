@@ -58,3 +58,6 @@ const result = (symbol, board) => {
   );
 };
 
+// Export methods
+export { threatRow, threatCol, threatCrossLeft, threatCrossRight, result};
+
