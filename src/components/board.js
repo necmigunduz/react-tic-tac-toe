@@ -37,18 +37,21 @@ class Board extends Component {
 
   render() {
     return (
-      <div>
+      <div className="board">
         {Object.keys(this.props.board).map((horizontal) => {
           return (
-            <div key={horizontal}>
+            <div 
+                key={horizontal}
+                className={`horizontal horizontal${horizontal}`}
+            >
               {this.props.board[horizontal].map((symbol, vertical) => {
                 return this.getSymbol(horizontal, vertical, symbol);
               })}
             </div>
           );
         })}
-        <Result winningLine={this.props.winningLine} />
-        <button onClick={this.props.resetGame}>Restart the game!</button>
+        <Result className="Result" winningLine={this.props.winningLine} />
+        <button className="reset-game" onClick={this.props.resetGame}>Restart the game!</button>
       </div>
     );
   }
